@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="/js/test08.jsp">
+id :
+	<input type="text" id="id"	>
+	<br> ps2 :
+	<input type="number" id="id2" maxlength="10" min="2">
+	<br> pwd:
+	<input type="password" id="pwd" ><!--maxlength="10" min="2" required*  --> 
+	<br>
+	<button type="button" onclick="checkValue()">로그인</button>
+	<!-- 경고창은 html5에서만 된다 -->
+	<SCRIPT>
+		function checkValue() {
+			var idObj = document.querySelector('#id');
+			var pwdObj = document.querySelector('#pwd');
+			if (idObj.value.trim().length < 4) {
+				alert("id는 4글자 이상입니다.");
+				idObj.value = "";
+				idObj.focus();
+				return false;
+			}
+			if (pwdObj.value.trim().length < 5) {
+				alert("pwd는 5글자 이상입니다.");
+				pwdObj.value = "";
+				pwdObj.focus();
+				return false;
+			}
+		}
+	</SCRIPT>
+</form>
+
+</body>
+</html>
