@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	id :
+	<input type="text" id="id">
+    <br> pwd:
+	<input type="password" id="pwd">
+	<br>
+	<button type="button" onclick="checkValue()">로그인</button>
+	<script>
+	function checkValue(){
+		var idObj = document.querySelector('#id');
+		var pwdObj = document.querySelector('#pwd');
+		if(idObj.value.trim().length<5){
+			alert("id는 5글자 이상입니다.");
+			idObj.value="";
+			idObj.focus();
+			return false;
+		}
+		if(pwdObj.value.trim().length<5){
+			alert("pwd는 5글자 이상입니다.");
+			pwdObj.value = "";
+			pwdObj.focus();
+			return false;
+		}
+		
+	}
+	</script>
+</body>
+</html>
+
+
